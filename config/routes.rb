@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'about' => 'abouts#index'
   get 'schedule' => 'schedules#index'
   get 'photo' => 'photos#index'
+  get 'gzk0ahgdj1acofjas74ihgas3cfaso' => 'abouts#edit'
 
 
   post 'place' => 'places#new'

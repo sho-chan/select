@@ -1,5 +1,4 @@
 class AboutsController < ApplicationController
-  before_action :set_about, only: [:show, :edit, :update, :destroy]
 
   # GET /abouts
   # GET /abouts.json
