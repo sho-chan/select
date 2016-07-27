@@ -11,3 +11,19 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore database.yml
+/config/database.yml
+# /config/database.yml.staging
+# /configdatabase,yml.production
+
+# Ignore project gems
+/vendor/bundle
+/vendor/bundler
+
+.ruby-version
+.DS_Store
+Gemfile.lock
+
+# Ignore assets
+/public/assets
