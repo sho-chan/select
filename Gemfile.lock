@@ -231,9 +231,10 @@ DEPENDENCIES
   better_errors
   byebug
   coffee-rails (~> 4.1.0)
-  google-api-client
+  google-api-client (= 0.6.4)
   jbuilder (~> 2.0)
   jquery-rails
+  jwt (= 0.1.5)
   mysql2 (~> 0.3.20)
   rails (= 4.2.2)
   sass-rails (~> 5.0)
