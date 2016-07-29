@@ -35,6 +35,10 @@ gem 'twitter'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Google Calender API
+gem 'google-api-client', '0.6.4'
+gem 'jwt', '0.1.5'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
