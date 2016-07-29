@@ -66,6 +66,7 @@ GEM
     equalizer (0.0.10)
     erubis (2.7.0)
     execjs (2.7.0)
+<<<<<<< HEAD
 <<<<<<< d3be003cd41694f5a3be7596b7cfde2402cbdaf0
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
@@ -86,6 +87,13 @@ GEM
       multipart-post (~> 1.2.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+=======
+    extlib (0.9.16)
+    faraday (0.8.11)
+      multipart-post (~> 1.2.0)
+    globalid (0.3.6)
+      activesupport (>= 4.1.0)
+>>>>>>> e2cc59621f61688cf7ce411d2fb971dd766aca2c
     google-api-client (0.6.4)
       addressable (>= 2.3.2)
       autoparse (>= 0.3.3)
@@ -96,7 +104,10 @@ GEM
       multi_json (>= 1.0.0)
       signet (~> 0.4.5)
       uuidtools (>= 2.1.0)
+<<<<<<< HEAD
 >>>>>>> to rebase
+=======
+>>>>>>> e2cc59621f61688cf7ce411d2fb971dd766aca2c
     i18n (0.7.0)
     jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
@@ -122,11 +133,15 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.9.0)
     multi_json (1.12.1)
+<<<<<<< HEAD
 <<<<<<< d3be003cd41694f5a3be7596b7cfde2402cbdaf0
     multipart-post (2.0.0)
 =======
     multipart-post (1.2.0)
 >>>>>>> to rebase
+=======
+    multipart-post (1.2.0)
+>>>>>>> e2cc59621f61688cf7ce411d2fb971dd766aca2c
     mysql2 (0.3.21)
     naught (1.1.0)
     nokogiri (1.6.8)
@@ -173,15 +188,21 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+<<<<<<< HEAD
 <<<<<<< d3be003cd41694f5a3be7596b7cfde2402cbdaf0
     simple_oauth (0.3.1)
 =======
+=======
+>>>>>>> e2cc59621f61688cf7ce411d2fb971dd766aca2c
     signet (0.4.5)
       addressable (>= 2.2.3)
       faraday (~> 0.8.1)
       jwt (>= 0.1.5)
       multi_json (>= 1.0.0)
+<<<<<<< HEAD
 >>>>>>> to rebase
+=======
+>>>>>>> e2cc59621f61688cf7ce411d2fb971dd766aca2c
     spring (1.7.2)
     sprockets (3.7.0)
       concurrent-ruby (~> 1.0)
@@ -211,6 +232,7 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.0.0)
       execjs (>= 0.3.0, < 3)
+<<<<<<< HEAD
 <<<<<<< d3be003cd41694f5a3be7596b7cfde2402cbdaf0
     unf (0.1.4)
       unf_ext
@@ -218,6 +240,9 @@ GEM
 =======
     uuidtools (2.1.5)
 >>>>>>> to rebase
+=======
+    uuidtools (2.1.5)
+>>>>>>> e2cc59621f61688cf7ce411d2fb971dd766aca2c
     web-console (2.3.0)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
