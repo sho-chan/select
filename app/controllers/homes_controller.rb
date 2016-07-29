@@ -1,5 +1,4 @@
 class HomesController < ApplicationController
-	require'twitter'
 	def index
 		@client = Twitter::REST::Client.new do |config|
     	config.consumer_key        = '1NjdQJfDQEpKcxz9SQ9PXXzo7'
