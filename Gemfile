@@ -37,7 +37,7 @@ gem 'instagram'
 # gem 'capistrano-rails', group: :development
 
 # Google Calender API
-gem 'google-api-client'
+gem 'google-api-client', '0.6.4'
 gem 'jwt', '0.1.5'
 
 group :development, :test do
