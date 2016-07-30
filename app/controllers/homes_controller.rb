@@ -1,5 +1,6 @@
 class HomesController < ApplicationController
 	def index
+<<<<<<< HEAD
 		@client = Twitter::REST::Client.new do |config|
     	config.consumer_key        = '1NjdQJfDQEpKcxz9SQ9PXXzo7'
     	config.consumer_secret     = 'uuzYItNYFqG767qy455VzhIlD4wMcnzLwAL16PlQq2F2VIvcTy'
