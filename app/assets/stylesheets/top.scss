@@ -2,7 +2,7 @@
 
 .top {
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 30vh - (15px + 20px + 15px));
   padding-top: 30vh;
 
   background-color: red;   // bg-imgにする
