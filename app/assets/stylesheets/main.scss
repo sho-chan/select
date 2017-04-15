@@ -1,0 +1,17 @@
+@import "_variables.scss";
+
+.main {
+  width: 60%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.main_nav {
+  width: 20%;
+  float: left;
+}
+
+.main_contents {
+  width: 80%;
+  float: right;
+}
