@@ -1,0 +1,7 @@
+<!-- twitter -->
+<% client.user_timeline("HandballHosei","count" => 200,:include_entities => true).each do |tweet| %>
+	<% tweet.media.each do |media| %>
+		<div><%= image_tag(media.media_url,:size => "128x128") %></div>
+		<div><%=tweet.text.slice(0..tweet.text.length-24)%></div>
+	<% end %>
+<% end %>
