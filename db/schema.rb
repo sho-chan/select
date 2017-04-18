@@ -11,31 +11,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160727052644) do
+ActiveRecord::Schema.define(version: 20170417154458) do
 
   create_table "abouts", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "introduce",  limit: 255
+    t.integer  "men",        limit: 4
+    t.integer  "women",      limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "admins", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "password",   limit: 255
+    t.string   "address",    limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "places", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",       limit: 255
+    t.string   "address",    limit: 255
+    t.string   "station",    limit: 255
+    t.string   "map_url",    limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "schedules", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "January",        limit: 255
+    t.string   "Februarystring", limit: 255
+    t.string   "Maarch",         limit: 255
+    t.string   "April",          limit: 255
+    t.string   "May",            limit: 255
+    t.string   "June",           limit: 255
+    t.string   "July",           limit: 255
+    t.string   "August",         limit: 255
+    t.string   "September",      limit: 255
+    t.string   "October",        limit: 255
+    t.string   "November",       limit: 255
+    t.string   "December",       limit: 255
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "universities", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
 end
