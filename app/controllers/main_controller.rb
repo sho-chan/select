@@ -1,7 +1,9 @@
-class PhotosController < ApplicationController
-	require'twitter'
-	require'instagram'
-	def index
+class MainController < ApplicationController
+  require'twitter'
+  require'instagram'
+  def index
+    @abouts = About.all
+
 		@client = Twitter::REST::Client.new do |config|
     	config.consumer_key        = '1NjdQJfDQEpKcxz9SQ9PXXzo7'
     	config.consumer_secret     = 'uuzYItNYFqG767qy455VzhIlD4wMcnzLwAL16PlQq2F2VIvcTy'
@@ -16,5 +18,9 @@ class PhotosController < ApplicationController
 		end
 
 		@users = Instagram.user_recent_media("3596203590")
+    
+    @events = google_calendar_event_dates(2016, 4)
+    @matches = google_calendar_match_dates(2016, 4)
+    @practices = google_calendar_practice_dates(2016, 4)
 	end
 end

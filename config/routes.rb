@@ -1,28 +1,24 @@
 Rails.application.routes.draw do
+  
+  root :to => 'main#index'
+  
+  get 'admin/ppV7OnIsWW/login' => 'admin#login'
+
+  get 'admin/ppV7OnIsWW/main' => 'admin#main'
+
+  get 'admin/ppV7OnIsWW/edit' => 'admin#edit'
+
+  get 'admin/ppV7OnIsWW/user/show' => 'admin#show'
+  get 'admin/ppV7OnIsWW/user/new' => 'admin#new'
+  
+  get 'main/index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'homes#index'
-
-  get 'home' => 'homes#index'
-  get 'about' => 'abouts#index'
-  get 'schedule' => 'schedules#index'
-  get 'photo' => 'photos#index'
-  get 'gzk0ahgdj1acofjas74ihgas3cfaso' => 'abouts#edit'
 
 
-  post 'place' => 'places#new'
-  delete 'place' => 'places#delete'
-  patch 'place' => 'places#update'
-
-
-  post 'universities' => 'universities#new'
-  delete 'universities' => 'universities#delete'
-  patch 'universities' => 'universities#update'
-
-
-  patch 'about' => 'about#update'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
