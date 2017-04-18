@@ -1,3 +1,20 @@
+<div class="photo">
+  <h2 class="main_title">Photo</h2>
+  <div class="photo_format">
+  <% client.user_timeline("HandballHosei", "count" => 200, :include_entities => true).each do |tweet| %>
+    <% tweet.media.each do |media| %>
+        <div class="photo_format_element">
+          <%= image_tag(media.media_url, :class => "photo_format_element_img") %>
+        </div>
+    <% end %>
+  <% end %>
+  </div>
+</div>
+
+
+
+
+
 <!-- twitter -->
 <% client.user_timeline("HandballHosei","count" => 200,:include_entities => true).each do |tweet| %>
 	<% tweet.media.each do |media| %>

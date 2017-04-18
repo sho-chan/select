@@ -1,6 +1,28 @@
+<header>
+  <div class="header_nav">
+    <div class="header_btn">Top</div>
+    <div class="header_btn">About</div>
+    <div class="header_btn">Schedule</div>
+    <div class="header_btn">Photo</div>
+    <div class="header_btn">DM</div>
+  </div>
+</header>
+
+<div class="top" style="background-image: url('<%= users.first.images.low_resolution.url %>')">
+  <div class="top_schedule">
+    <p class="top_schedule_date">Next Schedule ○○/○○ Friday</p>
+    <p class="top_schedule_place">Plactice in ○○○○○</p>
+  </div>
+</div>
+
+
+
+
+
+
 <!-- instagram -->
 <% users.each do |user| %>
-    <%= image_tag(user.images.low_resolution.url) %>
+  <%= image_tag(user.images.low_resolution.url) %>
 <% end %>
 
 <p>キャワタンwwwwwwwwwwwwwwwwww</p>
@@ -9,33 +31,33 @@
 <!-- googleカレンダー -->
 <h2>イベント情報</h2>
 <% events.each do |event| %>
-<p><b>日時</b></p>
-<%= event.start.date %>
-<p><b>詳細</b></p>
-<%= event.summary %>
-<p><b>場所</b></p>
-<%= event.location %>
-<br><br>
+  <p><b>日時</b></p>
+  <%= event.start.date %>
+  <p><b>詳細</b></p>
+  <%= event.summary %>
+  <p><b>場所</b></p>
+  <%= event.location %>
+  <br><br>
 <% end %>
 
 <h2>試合情報</h2>
 <% matches.each do |match| %>
-<p><b>日時</b></p>
-<%= match.start.dateTime %> 〜 <%= match.end.dateTime %>
-<p><b>詳細</b></p>
-<%= match.summary %>
-<p><b>場所</b></p>
-<%= match.location %>
-<br><br>
+  <p><b>日時</b></p>
+  <%= match.start.dateTime %> 〜 <%= match.end.dateTime %>
+  <p><b>詳細</b></p>
+  <%= match.summary %>
+  <p><b>場所</b></p>
+  <%= match.location %>
+  <br><br>
 <% end %>
 
 <h2>練習情報</h2>
 <% practices.each do |practice| %>
-<p><b>日時</b></p>
-<%= practice.start.dateTime %> 〜 <%= practice.end.dateTime %>
-<p><b>詳細</b></p>
-<%= practice.summary %>
-<p><b>場所</b></p>
-<%= practice.location %>
-<br><br>
+  <p><b>日時</b></p>
+  <%= practice.start.dateTime %> 〜 <%= practice.end.dateTime %>
+  <p><b>詳細</b></p>
+  <%= practice.summary %>
+  <p><b>場所</b></p>
+  <%= practice.location %>
+  <br><br>
 <% end %>
