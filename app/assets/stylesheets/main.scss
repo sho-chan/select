@@ -1,3 +1,21 @@
+
 // Place all the styles related to the Main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "_variables.scss";
+
+.main {
+  width: 60%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.main_nav {
+  width: 20%;
+  float: left;
+}
+
+.main_contents {
+  width: 80%;
+  float: right;
+}

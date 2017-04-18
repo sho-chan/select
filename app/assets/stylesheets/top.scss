@@ -1,0 +1,17 @@
+@import "_variables.scss";
+
+.top {
+  width: 100vw;
+  height: calc(100vh - 30vh - (15px + 20px + 15px));
+  padding-top: 30vh;
+
+  background-color: red;   // bg-imgにする
+  .top_schedule {
+    width: 50%;
+    margin: 0 auto;
+    padding: 40px 20px;
+    border: 1px solid;
+    border-color: white;
+    text-align: center;
+  }
+}
