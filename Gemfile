@@ -25,7 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'better_errors'
 
-gem 'twitter'
+gem 'twitter', '6.2.0'
 gem 'instagram'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -37,8 +37,9 @@ gem 'instagram'
 # gem 'capistrano-rails', group: :development
 
 # Google Calender API
-gem 'google-api-client', '0.6.4'
+gem 'google-api-client'
 gem 'jwt', '0.1.5'
+gem 'retriable', '3.0.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
