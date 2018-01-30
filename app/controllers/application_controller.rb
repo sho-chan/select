@@ -6,87 +6,47 @@ class ApplicationController < ActionController::Base
   # twitter api
   require'twitter'
 
-  # google calendar api
+  # Google api
   require 'google/apis/calendar_v3'
-  require "yaml"
-  require "time"
+  require 'googleauth'
+  require 'googleauth/stores/file_token_store'
+  require 'fileutils'
 
-  def google_calendar_event_dates(year, month)
-    oauth_yaml = YAML.load_file('.google-api.yaml')
-    client = Google::APIClient.new(:application_name => '')
-    client.authorization.client_id = oauth_yaml["client_id"]
-    client.authorization.client_secret = oauth_yaml["client_secret"]
-    client.authorization.scope = oauth_yaml["scope"]
-    client.authorization.refresh_token = oauth_yaml["refresh_token"]
-    client.authorization.access_token = oauth_yaml["access_token"]
-    cal = client.discovered_api('calendar', 'v3')
-    # 時間を格納
-    time_min = Time.utc(year, month, 1, 0).iso8601
-    time_max = Time.utc(year, month, 31, 24).iso8601
-    # イベントの取得
-    params = {'calendarId' => 'o0av2oqs27gsg0o5s00g14l2go@group.calendar.google.com',
-              'orderBy' => 'startTime',
-              'timeMax' => time_max,
-              'timeMin' => time_min,
-              'singleEvents' => 'True'}
-    result = client.execute(:api_method => cal.events.list,
-                            :parameters => params)
-    # イベントの格納
-    events = []
-    result.data.items.each do |item|
-            events << item
-    end
-    return events
-  end
+  def google_api(calendar_id)
+    oob_url = 'urn:ietf:wg:oauth:2.0:oob'
+    application_name = 'Google Calendar API Ruby Quickstart'
+    client_screts_path = 'client_secret.json'
+    credentials_path = File.join(Dir.home, '.credentials', "calendar-ruby-quickstart.yaml")
+    scope = Google::Apis::CalendarV3::AUTH_CALENDAR_READONLY
 
-  def google_calendar_match_dates(year, month)
-    oauth_yaml = YAML.load_file('.google-api.yaml')
-    client = Google::APIClient.new(:application_name => '')
-    client.authorization.client_id = oauth_yaml["client_id"]
-    client.authorization.client_secret = oauth_yaml["client_secret"]
-    client.authorization.scope = oauth_yaml["scope"]
-    client.authorization.refresh_token = oauth_yaml["refresh_token"]
-    client.authorization.access_token = oauth_yaml["access_token"]
-    cal = client.discovered_api('calendar', 'v3')
-    time_min = Time.utc(year, month, 1, 0).iso8601
-    time_max = Time.utc(year, month, 31, 24).iso8601
-    params = {'calendarId' => 't9eteqvebudg1fd4l1htkalvog@group.calendar.google.com',
-              'orderBy' => 'startTime',
-              'timeMax' => time_max,
-              'timeMin' => time_min,
-              'singleEvents' => 'True'}
-    result = client.execute(:api_method => cal.events.list,
-                            :parameters => params)
-    events = []
-    result.data.items.each do |item|
-            events << item
-    end
-    return events
-  end
+    ##
+    # Ensure valid credentials, either by restoring from the saved credentials
+    # files or intitiating an OAuth2 authorization. If authorization is required,
+    # the user's default browser will be launched to approve the request.
+    #
+    # @return [Google::Auth::UserRefreshCredentials] OAuth2 credentials
+    FileUtils.mkdir_p(File.dirname(credentials_path))
 
-  def google_calendar_practice_dates(year, month)
-    oauth_yaml = YAML.load_file('.google-api.yaml')
-    client = Google::APIClient.new(:application_name => '')
-    client.authorization.client_id = oauth_yaml["client_id"]
-    client.authorization.client_secret = oauth_yaml["client_secret"]
-    client.authorization.scope = oauth_yaml["scope"]
-    client.authorization.refresh_token = oauth_yaml["refresh_token"]
-    client.authorization.access_token = oauth_yaml["access_token"]
-    cal = client.discovered_api('calendar', 'v3')
-    time_min = Time.utc(year, month, 1, 0).iso8601
-    time_max = Time.utc(year, month, 31, 24).iso8601
-    params = {'calendarId' => 'aos9u8bjbpjc7uj6onnogkgfi8@group.calendar.google.com',
-              'orderBy' => 'startTime',
-              'timeMax' => time_max,
-              'timeMin' => time_min,
-              'singleEvents' => 'True'}
-    result = client.execute(:api_method => cal.events.list,
-                            :parameters => params)
-    events = []
-    result.data.items.each do |item|
-            events << item
+    client_id = Google::Auth::ClientId.from_file(client_screts_path)
+    token_store = Google::Auth::Stores::FileTokenStore.new(file: credentials_path)
+    authorizer = Google::Auth::UserAuthorizer.new(client_id, scope, token_store)
+    user_id = 'handballhosei'
+    credentials = authorizer.get_credentials(user_id)
+    if credentials.nil?
+      url = authorizer.get_authorization_url(base_url: oob_url)
+      # puts "Open the following URL in the browser and enter the " + "resulting code after authorization"
+      # puts url
+      code = '4/Wmo5c1wTcSVK5u5joi4zVf9l5HYu_OBAZS_6XSTByX8'
+      credentials = authorizer.get_and_store_credentials_from_code(user_id: user_id, code: code, base_url: oob_url)
     end
-    return events
+
+    # Initialize the API
+    service = Google::Apis::CalendarV3::CalendarService.new
+    service.client_options.application_name = application_name
+    service.authorization = credentials
+
+    # Fetch the next 10 events for the user
+    response = service.list_events(calendar_id, max_results: 10, single_events: true, order_by: 'startTime', time_min: Time.now.iso8601).items
   end
 
 end
