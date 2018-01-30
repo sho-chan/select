@@ -26,7 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'better_errors'
 
 gem 'twitter', '6.2.0'
-gem 'instagram'
+gem 'instagram', :git => 'git://github.com/Instagram/instagram-ruby-gem.git'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -37,8 +37,8 @@ gem 'instagram'
 # gem 'capistrano-rails', group: :development
 
 # Google Calender API
-gem 'google-api-client'
-gem 'jwt', '0.1.5'
+gem 'google-api-client', '0.19.5'
+gem 'jwt'
 gem 'retriable', '3.0.1'
 
 group :development, :test do
