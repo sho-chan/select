@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   require'twitter'
 
   # google calendar api
-  require 'google/api_client'
+  require 'google/apis/calendar_v3'
   require "yaml"
   require "time"
 
