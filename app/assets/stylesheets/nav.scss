@@ -1,0 +1,26 @@
+@import "_variables.scss";
+$margin-left: 3vw;
+
+.nav {
+  position: absolute;
+  top: 5vh;
+  letter-spacing: 0.3vw;
+  font-family: 'KozGoPr6N-Regular';
+  font-size: 1.2em;
+  z-index: 2;
+  .nav_menu {
+    padding: 0.5vh 1vw 0.5vh $margin-left;
+    margin-bottom: 2vh;
+    background-color: #BD1F00;
+    color: white;
+    display: inline-block;
+  }
+  .nav_main {
+    margin-left: $margin-left;
+    border-left: 2px solid black;
+    padding-left: 1.5vw;
+  }
+  a {
+    display: block;
+  }
+}

@@ -10,56 +10,77 @@
 <header>
 </header>
 
-  <header>
-    <div class="header_nav">
-      <div class="header_btn">Top</div>
-      <div class="header_btn">About</div>
-      <div class="header_btn">Schedule</div>
-      <div class="header_btn">Photo</div>
-      <div class="header_btn">DM</div>
+  <nav class="nav">
+    <div class="nav_menu">menu</div>
+    <div class="nav_main">
+      <a href="#welcome">welcome</a>
+      <a href="#photos">photos</a>
+      <a href="#about-us">about us</a>
+      <a href="#schedule">schedule</a>
+      <a href="#contacts">contact</a>
     </div>
-  </header>
+  </nav>
 
   <div class="top">
+    <div class="top_catchcopy">
+      <p>
+        <span class="bokosuka">ハンド、しよう</span>
+        <span class="no_bokosuka">！</span>
+      </p>
+    </div>
+    <div class="top_name">
+      <p class="top_name_circle">
+        <img src="">
+        SELECT
+      </p>
+      <p class="top_name_univ">Hosei Univ. Handball Circle</p>
+    </div>
     <div class="top_schedule">
-      <p class="top_schedule_date">Next Schedule ○○/○○ Friday</p>
-      <p class="top_schedule_place">Plactice in ○○○○○</p>
+      <div class="top_schedule_inline">
+        <p class="top_schedule_f-middle1">next schedule</p>
+        <p class="top_schedule_f-heavy">12/18</p>
+        <p class="top_schedule_f-middle2">17:30</p>
+        <p class="top_schedule_f-middle3">富士見体育館</p>
+      </div>
+    </div>
+    <div class="top_scroll">
+      <p>scroll</p>
+      <a href="#welcome"><img src="assets/down.png"></a>
     </div>
   </div>
 
 
   <div class="main">
-
-    <nav class="main_nav">
-      <div class="main_nav_menu">
-        <div class="main_nav_menu_btn">Top</div>
-        <div class="main_nav_menu_btn">About</div>
-        <div class="main_nav_menu_btn">Schedule</div>
-        <div class="main_nav_menu_btn">Photo</div>
-        <div class="main_nav_menu_btn">DM</div>
-      </div>
-      <div class="main_nav_link">
-        <div class="main_nav_link_btn">twitter link</div>
-      </div>
-    </nav>
-
     <div class="main_contents">
 
-      <div class="about">
+      <div id="welcome" class="welcome">
         <div class="about_format">
-          <h1 class="mine_title about_format_name">SELECT</h1>
-          <p class="about_main_introduction">説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお説明入れるよお</p>
+          <h1 class="mine_title about_format_name">
+            <img src="">
+            ようこそ、SELECTへ！
+          </h1>
+            <p class="about_main_introduction">
+              セレクトは、法政大学を中心とした</br>
+              ハンドボールのインカレサークルです。</br>
+              高校までやっていて大学でも考えている経験者の方も！</br>
+              やったことないけどちょっと興味がある方も！</br>
+              とにかく楽しくスポーツがしたい女の子も！</br>
+              もちろん他大学の方も！</br>
+              とにかく誰でも大歓迎 ^^
+            </p>
+            <p><img src="">ジョイナス！！</p>
+            <p>
+              練習だけではなく、</br>
+              他サークルや他大学との試合もあります。</br>
+              ハンドボールの他にもお花見やBBQ、スノボ、合宿など</br>
+              最高に楽しいイベントが盛りだくさん！</br>
+              アットホームで楽しい仲間がいる SELECT にぜひ！</br>
+            </p>
+            <p><img src="">レッツ、エンジョイ！</p>
         </div>
       </div>
 
-
-      <div class="schedule">
-        <h2 class="main_title">Schedule</h2>
-        <div></div>
-      </div>
-
-
-      <div class="photo">
+      <div id="photos" class="photo">
         <h2 class="main_title">Photo</h2>
         <div class="photo_format">
 
@@ -87,24 +108,48 @@
           <div class="photo_format_element">
             <img src="" class="photo_format_element_img">
           </div>
-
         </div>
       </div>
 
+      <p>
+        最近のセレクトの活動雰囲気です。</br>
+        ハンドは真面目に、イベントは楽しくワイワイ。</br>
+        練習後の飲み会は最高ですよ！</br>
+        twtterも見てね！</br>
+      </p>
 
-      <div class="dm">
-        <h2 class="main_title">Direct Message</h2>
-        <div class="dm_format">
-          <form class="dm_format_form">
-            <label class="dm_format_title">名前</label>
-            <input type="text" name="name" class="dm_format_text">
-            <label class="dm_format_title">メールアドレス or LINE ID</label>
-            <input type="text" name="address" class="dm_format_text">
-            <label class="dm_format_title">投稿内容</label>
-            <textarea name="contents" class="dm_format_textarea"></textarea>
-            <input type="submit" name="send" value="send" class="dm_format_btn">
-          </form>
-        </div>
+      <div id="about-us" class="about-us">
+        <p>セレクト！</p>
+        <h2>メインイベント</h2>
+        <div>tableとかでやる</div>
+        <p>どれも最高の思い出になるイベントだよ！</p>
+        <h2>メンバー構成</h2>
+        <p>
+          現在一年生が15人、二年生が10人、</br>
+          三年生が14人の合計39人で</br>
+          活動しています。</br>
+          男女比は1:1で、アットホームな</br>
+          雰囲気で同期も先輩後輩も仲良く、</br>
+          和気藹々としています ^^
+        </p>
+        <div>右にグラフ</div>
+      </div>
+
+      <div id="schedule" class="schedule">
+        <h2 class="main_title">スケジュール</h2>
+        <div></div>
+      </div>
+
+      <div id="contacts" class="contacts">
+        <h2 class="main_title">コンタクト</h2>
+        <p>ハンドボールサークル　SELECT代表　〇〇</p>
+        <!-- hrefの中に "mailto:info@example.com?subject=問い合わせ&amp;body=ご記入ください" を入れる -->
+        <p><a href="">メールアドレス</a></p>
+        <div>twitter → 画像</div>
+        <p>
+          気軽に連絡してください ^^</br>
+          ご覧になってくださりありがとうございました。
+        </p>
       </div>
 
     </div>
