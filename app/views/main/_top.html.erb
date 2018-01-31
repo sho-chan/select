@@ -1,16 +1,11 @@
 <!-- instagram -->
-<% users.each do |user| %>
-    <%= image_tag(user.images.low_resolution.url) %>
-<% end %>
-
-<p>キャワタンwwwwwwwwwwwwwwwwww</p>
 <!-- <%= @matches %> -->
 
 <!-- googleカレンダー -->
 <h2>イベント情報</h2>
 <% events.each do |event| %>
 <p><b>日時</b></p>
-<%= event.start.date %>
+<%= event.start.date.to_s.gsub("-", "/") %>
 <p><b>詳細</b></p>
 <%= event.summary %>
 <p><b>場所</b></p>
@@ -19,9 +14,10 @@
 <% end %>
 
 <h2>試合情報</h2>
+<%=matches.first.start.date.class%>
 <% matches.each do |match| %>
 <p><b>日時</b></p>
-<%= match.start.date_time %> 〜 <%= match.end.date_time %>
+<%= match.start.date_time.to_s.sub("+09:00","") .gsub(/T|-/,"/")%> 〜 <%= match.end.date_time.to_s.sub("+09:00","").gsub(/T|-/,"/") %>
 <p><b>詳細</b></p>
 <%= match.summary %>
 <p><b>場所</b></p>
@@ -32,7 +28,7 @@
 <h2>練習情報</h2>
 <% practices.each do |practice| %>
 <p><b>日時</b></p>
-<%= practice.start.date_time %> 〜 <%= practice.end.date_time %>
+<%= practice.start.date_time.to_s.sub("+09:00","") .gsub(/T|-/,"/")%> 〜 <%= practice.end.date_time.to_s.sub("+09:00","").gsub(/T|-/,"/") %>
 <p><b>詳細</b></p>
 <%= practice.summary %>
 <p><b>場所</b></p>
