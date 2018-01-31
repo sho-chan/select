@@ -26,7 +26,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'better_errors'
 
 gem 'twitter', '6.2.0'
-gem 'instagram', :git => 'git://github.com/Instagram/instagram-ruby-gem.git'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
